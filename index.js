@@ -1,9 +1,14 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { SongController } from './Controllers/song.controller.js'
+dotenv.config()
+
 const app = express()
 const port = process.env.PORT
-dotenv.config()
+
+app.get('/', (req, res) => {
+	res.send('Velkommen til min sangbog')
+})
 
 app.use(SongController)
 
