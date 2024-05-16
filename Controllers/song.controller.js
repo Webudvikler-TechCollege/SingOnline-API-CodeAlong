@@ -11,3 +11,8 @@ SongController.get('/songs/:id', async (req, res) => {
 	const data = await SongModel.getRecordById(req.params.id)
 	res.send(data);
 });
+
+SongController.post('/songs', async (req, res) => {
+	const data = await SongModel.createRecord(req.body)
+	res.send(data)
+});
