@@ -1,6 +1,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import { SongController } from './Controllers/song.controller.js'
+import { StatusController } from './Controllers/status.controller.js';
+
 dotenv.config()
 
 const app = express()
@@ -12,6 +14,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(SongController)
+app.use(StatusController)
 
 app.listen(port, () => {
 	console.log(`Webserver is running now on http://localhost:${port}`);
